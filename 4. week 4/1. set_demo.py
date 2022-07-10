@@ -1,5 +1,5 @@
 # unordered data type
-
+# sets are mutable
 # you CANNOT define an empty set using literals
 
 emptySet = set()
@@ -20,11 +20,23 @@ print(len(odd.intersection(power)))
 # *important: a set does not take repetitive members
 print(len(odd.union(power)))  # sum of two sets is 32 but it gives 28
 
-print('hello github')
-
-print('hello github 2')
 
 
+
+
+
+print('change list')
+
+
+# sets update methods
+print(odd.intersection_update(power))  # it returns none because sets are mutable
+print(odd)
+
+# frozenset(): make an iterable object to a immutable set
+
+alphabetList = ['a', 'b', 'c', 'd']
+frozenSet = frozenset(alphabetList)
+print(frozenSet)
 
 
 
