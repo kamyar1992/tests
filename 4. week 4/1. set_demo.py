@@ -39,3 +39,7 @@ print(len(odd.union(power)))  # sum of two sets is 32 but it gives 28
 
 
 
+
+
+
+
