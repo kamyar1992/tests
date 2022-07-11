@@ -13,3 +13,5 @@
 for number in range(1, 101):
     print("hop-wize" if number in range(0,101, 15) else "hop" if number in range(0,101,3) else "wiz" if number in range(0,101,5) else number)
 
+import os
+import sys

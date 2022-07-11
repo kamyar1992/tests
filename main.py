@@ -14,6 +14,7 @@ if __name__ == '__main__':
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
-print( 2 % 3 )
-for x in range(2, 2):
-    print(x)
+import random
+x = '10'
+int(x)
+print(type(x))
