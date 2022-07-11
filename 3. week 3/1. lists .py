@@ -90,7 +90,7 @@ odd = odd + [1000]
 print("backUp1_id: ", id(backUp1), "backUp1:", fullBackUp)
 print("odd_id:     ", id(odd), "odd:", odd)
 
-# assignment:
+# augment assignment:
 print('+'*40)
 print("augment assignment")
 odd += [1000]
