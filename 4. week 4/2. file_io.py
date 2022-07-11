@@ -31,7 +31,6 @@ with open('sample.txt') as fid:
     lines = fid.readlines()
 print(lines)
 
-
 print('=' * 40)
 with open('sample.txt') as fid:
     rf = fid.read()
@@ -43,10 +42,16 @@ with open('sample.txt') as fid:
     rfChar = fid.read(5)
 print(rfChar)
 
+# write in a file:
+# with print()
+with open('sampleWrite.txt', 'w') as fid:
+    print('hello kamyar', file=fid)
+    # readFile = fid.read()  *important it is a bug because the file was opened for writhing
+    # print(readFile)
+    # fid.seek(0)
+    # print(fid.read())
 
-
-
-
-
-
-
+# writelines()
+lines = ['Kamyar\n', 'Mazaheri\n', str(30)+'\n']
+with open('sampleWrite.txt', 'w') as fid:
+    fid.writelines(lines)  # *important all iterable elements should be string
