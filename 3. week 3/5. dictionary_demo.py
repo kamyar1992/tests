@@ -47,6 +47,11 @@ for key in sampleDic:  # very fast o(n)
 for value in sampleDic.values():  # very low o(n^2)
     print(value)
 
+my_dict = dict.fromkeys(['a', 'c', 'd'], 10)
+my_dict.update(dict.fromkeys(['b', 'e'], 20))
+print(my_dict)
+
+
 
 
 

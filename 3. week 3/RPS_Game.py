@@ -1,5 +1,5 @@
 import random
-
+import os
 quitTuple = ('q', 'quit')
 starterBoolean = True
 aValueForWinningScore = 0
@@ -37,14 +37,14 @@ while starterBoolean:
                         userWord = "rock"
                     elif word.lower() == 'p':
                         userWord = 'paper'
-                    else:
-                        userWord = word.lower()
+
                     print("you choose", userWord)
                     print("computer chooses", computerChoice)
                     if userWord == computerChoice:
                         print("no one win")
                         print("computer Score: ", computerScore)
                         print("your score:", userScore)
+                        clean = os.system("cls")
                         noWord = False
                         break
                     elif userWord == 'rock' and computerChoice == 'scissors':
@@ -52,6 +52,7 @@ while starterBoolean:
                         userScore += 1
                         print("computer Score: ", computerScore)
                         print("your score:", userScore)
+                        clean = os.system("cls")
                         noWord = False
                         break
                     elif userWord == 'rock' and computerChoice == 'paper':
@@ -59,6 +60,7 @@ while starterBoolean:
                         computerScore += 1
                         print("computer Score: ", computerScore)
                         print("your score:", userScore)
+                        clean = os.system("cls")
                         noWord = False
                         break
                     elif userWord == 'paper' and computerChoice == 'scissors':
@@ -66,6 +68,7 @@ while starterBoolean:
                         computerScore += 1
                         print("computer Score: ", computerScore)
                         print("your score:", userScore)
+                        clean = os.system("cls")
                         noWord = False
                         break
                     elif userWord == 'paper' and computerChoice == 'rock':
@@ -73,6 +76,7 @@ while starterBoolean:
                         userScore += 1
                         print("computer Score: ", computerScore)
                         print("your score:", userScore)
+                        clean = os.system("cls")
                         noWord = False
                         break
                     elif userWord == 'scissors' and computerChoice == 'rock':
@@ -80,6 +84,7 @@ while starterBoolean:
                         computerScore += 1
                         print("computer Score: ", computerScore)
                         print("your score:", userScore)
+                        clean = os.system("cls")
                         noWord = False
                         break
                     elif userWord == 'scissors' and computerChoice == 'paper':
@@ -87,6 +92,7 @@ while starterBoolean:
                         userScore += 1
                         print("computer Score: ", computerScore)
                         print("your score:", userScore)
+                        clean = os.system("cls")
                         noWord = False
                         break
             if computerScore == aValueForWinningScore or userScore == aValueForWinningScore:
@@ -126,7 +132,3 @@ while starterBoolean:
     else:
         print("please type an integer number!!! (q or Quit to exit)")
         continue
-
-kamyar = 'kamyar'
-
-kamyar.strip()

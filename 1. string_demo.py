@@ -12,3 +12,17 @@ print(my_string[-1:-10:-1])
 print(my_string[3: -5])  # *important
 print(my_string[-1: 3: -1])  # *important
 
+print(my_string.rstrip('YAHBZ'))
+print("kamyar's".removesuffix("'s"))
+print("kamyar".removesuffix(","))
+
+
+word = '"kamyar"'
+plainWord = word.removesuffix('"')
+plainWord = word.removesuffix("'")
+# plainWord = word.removeprefix('"')
+# plainWord = word.removeprefix("'")
+# plainWord = word.removesuffix(',')
+# plainWord = word.removesuffix("'s")
+# plainWord = word.removesuffix(".")
+print(plainWord)

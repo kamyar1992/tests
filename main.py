@@ -14,7 +14,11 @@ if __name__ == '__main__':
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
-import random
-x = '10'
-int(x)
-print(type(x))
+
+bloodProviderDic = {0: range(8),
+                    1: range(1, 8, 2)
+                    }
+
+print(list(bloodProviderDic[0]))
+print('\33[3J', '\n')
+
