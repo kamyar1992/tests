@@ -36,4 +36,22 @@ print(adder(3, 3, c=1, d=1))
 print(adder(a=1, d=1, b=1, c=1))
 
 print('=' * 40)
-print(1, 2, 3, sep='@@', end='%%%')
+print(1, 2, 3, sep='@@', end='%%%\n')  # *important end= is very important you can omit \n to understand
+print('=' * 40)
+# * ==> unpack a tupel
+
+
+def number_adder(*args, spt=":", ind = 1):
+    sum_value = 0
+    for num, index in enumerate(args, ind):
+        print('{} {} {}'.format(index, spt, num))
+        sum_value += num
+    return sum_value
+
+
+print(number_adder(1, 2, 3, 4, 5, 6, 7))
+
+
+
+
+
