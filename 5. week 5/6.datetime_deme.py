@@ -22,17 +22,21 @@ import pytz  # pytz is a package that enable us to make datatime module time awa
 print(type(pytz.country_names))  # as you can see this is a dictionary
 # for tz in pytz.country_names:
 #     print(tz, pytz.country_names[tz])
+
+print(type(pytz.all_timezones))  # it is some kind of lists
+# for tz in pytz.all_timezones:
+#     print(tz)
+
 print(type(pytz.country_timezones))  # as you can see this is a dictionary
 # for tz in pytz.country_timezones:
 #     print(tz, pytz.country_timezones[tz])
 
-print(type(pytz.all_timezones))  # it is some kind of lists
-for tz in pytz.all_timezones:
-    print(tz)
-
-
-
-
-
+for tz in pytz.country_names:
+    print(tz, pytz.country_names[tz], pytz.country_timezones.get(tz, "NO TIME ZONE"))
+print("\n" * 10)
+utc_time = datetime.datetime.utcnow()
+print(utc_time)
+print(pytz.utc.localize(utc_time))
+print(pytz.utc.localize(utc_time).astimezone())
 
 
