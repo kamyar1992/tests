@@ -39,4 +39,3 @@ print(utc_time)
 print(pytz.utc.localize(utc_time))
 print(pytz.utc.localize(utc_time).astimezone())
 
-

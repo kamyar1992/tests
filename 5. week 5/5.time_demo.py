@@ -26,7 +26,7 @@ print('=' * 40)
 
 tehranTime = time.localtime()
 print(tehranTime)
-print('{}, {}, {} \t {}, {}, {}'.format(tehranTime.tm_mday,
+print('{}, {}, {} \n {}, {}, {}'.format(tehranTime.tm_mday,
                                         tehranTime.tm_mon,
                                         tehranTime.tm_year,
                                         tehranTime.tm_hour,

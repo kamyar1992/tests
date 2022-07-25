@@ -8,5 +8,5 @@ from mod import saba as sb
 print(sb)
 
 from mod import *  # in big modules it creates problems and make a model or project heavy
-print(test('hello'))
+print(test('hello'))  # pay attention to None that is printed
 
