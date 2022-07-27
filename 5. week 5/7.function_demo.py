@@ -21,6 +21,7 @@ print(type(temp2))
 # 1- str()
 # 2- repr()
 
+
 def adder(a, b, c=1 , d=2):  # parameters
     return a + b + c + d
 
