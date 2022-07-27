@@ -4,13 +4,14 @@ import turtle
 def set_starter():
     turtle_object = turtle.Turtle()
     screen_object = turtle.Screen()
+    turtle_object.hideturtle()
     screen_object.setup(550, 550)
     turtle_object.penup()
     turtle_object.goto(-225, 225)
     turtle_object.pendown()
     turtle_object.speed(2)
     turtle_object.pensize(5)
-    turtle_object.hideturtle()
+
     turtle_object.speed('fastest')
     print(turtle_object.position())
     return turtle_object, screen_object
