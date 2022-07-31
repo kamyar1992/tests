@@ -1,0 +1,13 @@
+def sample_function(arg1, arg2, arg3):
+    """
+    this function work as a
+    it can .....
+    :param arg1: get the first number
+    :param arg2: ...................
+    :param arg3: ...................
+    :return: it returns .......
+    """
+
+
+help(sample_function)
+
