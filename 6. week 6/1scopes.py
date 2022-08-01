@@ -1,4 +1,4 @@
-def number_adder(*args, spt=":", ind = 1):
+def number_adder(*args, spt=":", ind=1):
     sum_value = 0
     for num, index in enumerate(args, ind):
         print('{} {} {}'.format(index, spt, num))

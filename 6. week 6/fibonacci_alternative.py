@@ -8,4 +8,5 @@ def fibonacci(n):
 
 if __name__ == '__main__':
     print(len(str(fibonacci(100000))))
+    print(fibonacci(10))
 
