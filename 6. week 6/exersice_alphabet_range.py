@@ -9,6 +9,6 @@ def alpha(starter: str, final: str, step: int):
 
 
 print("abcdefghijklmnopqrstuvwxyz".index("a"))
-for item in alpha('a', 'ff', 2):
+for item in alpha('a', 'f', 1):
     print(item)
 

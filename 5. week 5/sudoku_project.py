@@ -9,10 +9,10 @@ def set_starter():
     turtle_object.penup()
     turtle_object.goto(-225, 225)
     turtle_object.pendown()
-    turtle_object.speed(2)
+    turtle_object.speed(5)
     turtle_object.pensize(5)
 
-    turtle_object.speed('fastest')
+    # turtle_object.speed('fastest')
     print(turtle_object.position())
     return turtle_object, screen_object
 
@@ -45,9 +45,6 @@ def draw_horizontal_lines(turtle_object):
         print(turtle_object.position()[0]+50, 225)
         turtle_object.goto(turtle_object.position()[0]+50, 225)
         turtle_object.pendown()
-
-
-
 
 
 screen = set_starter()[1]
