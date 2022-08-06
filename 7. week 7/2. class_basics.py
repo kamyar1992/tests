@@ -5,7 +5,7 @@ import time
 
 class kettle(object):
     # class attribute
-
+    power = 'electric'
     # constructor
     def __init__(self, brand, price):
         # instance attributes
@@ -25,7 +25,6 @@ class kettle(object):
         print('the temperature is set to {}'.format(degree))
 
 
-
 if __name__ == "__main__":
     smeg = kettle('Smeg', 5000000)  # instantiate (smeg is an instance of class kettle)
     pars_khazar = kettle('Pars Khasar', 2000000)
@@ -39,8 +38,24 @@ if __name__ == "__main__":
     print(smeg.on)
     smeg.turn_on()
     print(smeg.on)
-    smeg.set_temperature(20)
+    # smeg.set_temperature(20)
+    print('=' * 50)
+#  namespaces:
+#     print(smeg.__name__)
+    print(smeg.__dict__)  # instance attributes
+    print(kettle.__dict__)  # class attributes *important be careful instance and class attributes are totally different
 
+    # class attributes are not in object attributes until an object chang it then it goes to that object name space
+    # *important when a class attribute is change by an object, it just changes  for that instance not for all instances
+    # and class
+    print(kettle.power)
+    print(smeg.power)
+    pars_khazar.power = 'gas'
+    print(pars_khazar.power)
+    print(smeg.power)
+    print(kettle.power)
+    print('this is pars_khasar namespace: ', pars_khazar.__dict__)
+    print('this is smeg namespace:      ', smeg.__dict__)
 
 
 
