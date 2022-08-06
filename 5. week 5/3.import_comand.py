@@ -14,5 +14,5 @@ print('=' * 40)
 print('=' * 40)
 import myPackage
 print(myPackage.alist)
-myPackage
+
 
