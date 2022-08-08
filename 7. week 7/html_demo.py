@@ -4,19 +4,28 @@ import sys
 class Tag(object):
 
     def __init__(self, name, content, **attributes):
+        self.name = name
         self.start_tag = '<{}>'.format(name)
         self.end_tag = '</{}>'.format(name)
         self.content = content
-        self.attributes = dict()
+        # self.attributes = list()
+        self.att = ''
+        if attributes:  # here attributes are handled if a tag has one or more actually the string of attributes are
+            # created
+            for key in attributes:
+                self.att += f'{key}={attributes[key]} '
+        self.att.strip()
 
     def __str__(self):
+        if self.att:
+            self.start_tag = '<{} {}>'.format(self.name, self.att)  # here the attributes are added to the starter tag
         return '{0.start_tag}{0.content}{0.end_tag}'.format(self)  # *important nice way to write string formatting
 
     def display(self):
         print(self)
 
-    def handel_attribute(self):
-        pass
+    # def handel_attribute(self):  # we don't need this method because attributes are handled in __init__()
+    #     pass
 
 
 class DocType(Tag):
@@ -56,9 +65,11 @@ if __name__ == '__main__':
 
     doc = DocType(5)
     doc.display()
-    doc2 = DocType(2)
-    doc2.display()
+    # doc2 = DocType(2)  if uncomment this part of code it does not work after this line
+    # doc2.display()
 
+    tagWithContents = Tag('t1', 'this is a tag with content', id="123", Class="class_One")
+    tagWithContents.display()
 
 
 
