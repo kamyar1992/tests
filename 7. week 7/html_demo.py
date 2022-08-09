@@ -68,11 +68,21 @@ class Body(Tag):
         super().__init__(n='body', c='\n')
         self.body_contents = list()
 
-    def add_content(self, n, c='', single=False, **att):  # this make head content tags
+    def add_child(self, n, c, child=None, **att):
+        new_tag = Tag(n, c, att)
+        if child:
+            for item in child:
+                new_tag.content += item
+        return str(new_tag)
+
+    def add_content(self, n, c='', single=False, child=None, **att):  # this make head content tags
         new_tage = Tag(n=n, c=c, **att)
         if single:
             new_tage.end_tag = ''
             new_tage.content = ''
+        if child:
+            for item in child:
+                new_tage.content += item
         self.body_contents.append(str(new_tage))
 
     def display(self):
