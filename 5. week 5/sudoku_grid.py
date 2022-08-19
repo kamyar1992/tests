@@ -6,10 +6,10 @@ import numpy as np
 import copy
 
 
-def draw_grid(tortoise):
+def draw_grid(tortoise: turtle) -> None:
 
-    tortoise.hideturtle()
-    tortoise.speed(0)
+    # tortoise.hideturtle()
+    # tortoise.speed(0)
     direction = 1
     tortoise.penup()
     tortoise.goto(-N * W / 2, -N * W / 2)
@@ -194,7 +194,7 @@ if __name__ == '__main__':
     t1 = turtle.Turtle()
     draw_grid(t1)
 
-    # time.sleep(4)
+    time.sleep(4)
 
     t2 = turtle.Turtle()
     full_grid = calculate_grid(t2)

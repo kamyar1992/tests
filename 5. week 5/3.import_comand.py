@@ -15,4 +15,10 @@ print('=' * 40)
 import myPackage
 print(myPackage.alist)
 
+print(dir(myPackage.__init__))  # dir() just work for modules not packages
+from myPackage.subpackage1 import subpackage_module1
+print(subpackage_module1.subpackage1_module1())
+print(dir(myPackage.subpackage1.__init__))
 
+import PIL
+print(dir(PIL.__init__))

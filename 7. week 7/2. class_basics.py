@@ -6,6 +6,7 @@ import time
 class kettle(object):
     # class attribute
     power = 'electric'
+
     # constructor
     def __init__(self, brand, price):
         # instance attributes
@@ -56,12 +57,10 @@ if __name__ == "__main__":
     print(kettle.power)
     print('this is pars_khasar namespace: ', pars_khazar.__dict__)
     print('this is smeg namespace:      ', smeg.__dict__)
-
-
-
-
-
-
+    print(help(type))
+    print(dir())
+    print(globals())
+    print(smeg.__dict__)
 
 
 

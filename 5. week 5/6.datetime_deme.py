@@ -8,6 +8,7 @@ print('=' * 40)
 
 today = datetime.date.today()
 threeWeeksFromNow = datetime.timedelta(weeks=3)
+print(threeWeeksFromNow)
 print(today + threeWeeksFromNow)
 
 # .strftime(): https://docs.python.org/3/library/datetime.html?highlight=datetime#strftime-and-strptime-behavior

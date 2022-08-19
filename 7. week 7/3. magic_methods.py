@@ -7,7 +7,7 @@ b = 10
 print(a + b)
 print(a.__add__(b))
 
-# help(type)
+print(help(type))
 
 
 class Foo(object):  # foo the name that use for examples

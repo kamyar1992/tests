@@ -15,7 +15,7 @@ print(sys.path)
 print(sys.path)
 print(random.Kamyar)  # this is not python build in module
 
-
+print(dir(mod))
 
 
 
