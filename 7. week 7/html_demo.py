@@ -68,11 +68,14 @@ class Body(Tag):
         super().__init__(n='body', c='\n')
         self.body_contents = list()
 
-    def add_child(self, n, c, child=None, **att):
-        new_tag = Tag(n, c, att)
-        if child:
+    def define_chile(self, n, c, single=False, child=None, **att):
+        new_tag = Tag(n, c, **att)
+        if single:  # single is ture
+            new_tag.content = ''
+            new_tag.end_tag = ''
+        if child:  # if it has chile
             for item in child:
-                new_tag.content += item
+                new_tag.content += '\n\t' + item + '\n'
         return str(new_tag)
 
     def add_content(self, n, c='', single=False, child=None, **att):  # this make head content tags
@@ -82,7 +85,7 @@ class Body(Tag):
             new_tage.content = ''
         if child:
             for item in child:
-                new_tage.content += item
+                new_tage.content += '\n\t' + item + '\n'
         self.body_contents.append(str(new_tage))
 
     def display(self):
@@ -90,6 +93,18 @@ class Body(Tag):
             self.content += item + '\n'
         super().display()
 
+
+class Html(object):
+    def __init__(self, version=5):
+        self.doc = DocType(version=version)
+        self.head = Head()
+        self.body = Body()
+
+    def add_content(self):
+        pass
+
+    def display(self):
+        pass
 
 if __name__ == '__main__':
     myTag = Tag('myTag', 'simple content')
@@ -114,6 +129,24 @@ if __name__ == '__main__':
     # < meta name = "generator" content = "Hugo 0.101.0" >
     # <title>Bootstrap · The most popular HTML, CSS, and JS library in the world.</title>
     headTage.display()
+
+    htmlBody = Body()
+    # chile must be made from the inner one
+    a1 = htmlBody.define_chile('a', 'Skip to main content', Class='d-inline-flex p-2 m-1', href='#content')
+    div1 = htmlBody.define_chile('div', '', child=(a1,),  id='container')
+    # the outer chile must be added as a content:
+    htmlBody.add_content('div', '', child=(div1,), Class="container-xl")
+    htmlBody.display()
+
+
+
+    # body
+
+        # <div class ="container-xl">
+        #     <div id='container'>
+        #         <a class ="d-inline-flex p-2 m-1" href="#content" > Skip to main content < / a >
+        #     </div>
+        # </div>
 
 
 
