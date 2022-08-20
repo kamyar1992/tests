@@ -1,5 +1,6 @@
 import sys
-
+# static methods: also call class methods,these methods does not instance(self), they should use by class name
+# because of reducing one search
 
 class Tag(object):
 
@@ -73,7 +74,8 @@ class Body(Tag):
 
         self.body_contents = list()
 
-    def define_child(self, n, c, single=False, child=None, **att):
+    @staticmethod  # static method
+    def define_child(n, c, single=False, child=None, **att):
         new_tag = Tag(n, c, **att)
         if single:  # single is ture
             new_tag.content = ''
@@ -115,10 +117,10 @@ class Html(object):
             if child:
                 raise NotImplementedError('head does not have a child tag')
             else:
-                self.head.add_content(n=n, c=c, single=single, **att)
+                self.head.add_content(n=n, c=c, single=single, **att)  # delegation
                 # print(str(self.head))
         elif section.lower() == 'body':
-            self.body.add_content(n=n, c=c, single=single, child=child, **att)
+            self.body.add_content(n=n, c=c, single=single, child=child, **att)  # delegation
         else:
             raise NotImplementedError('selected section is not supported')
 
