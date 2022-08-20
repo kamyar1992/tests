@@ -22,7 +22,7 @@ class Tag(object):
         return '{0.start_tag}{0.content}{0.end_tag}'.format(self)  # *important nice way to write string formatting
 
     def display(self):
-        print(str(self))
+        print(self)
 
     # def handel_attribute(self):  # we don't need this method because attributes are handled in __init__()
     #     pass
@@ -62,11 +62,9 @@ class Head(Tag):
             self.content += item + '\n'
         return super().__str__()
 
-
     def display(self):
         for item in self.head_contents:
             self.content += item + '\n'
-
 
 
 class Body(Tag):
@@ -129,12 +127,19 @@ class Html(object):
 
     def display(self):
         new_tag = Tag('Html', '')
-        self.doc.display()
-        # new_tag.content += str(self.head)
-        # new_tag.content += str(self.body)
+        new_tag.content = str(self.doc)
         new_tag.content += str(self.head)
         new_tag.content += str(self.body)
         new_tag.display()
+
+    def write_in_file(self, file='html-index.html'):
+        new_tag = Tag('Html', '')
+        new_tag.content = str(self.doc)
+        new_tag.content += str(self.head)
+        new_tag.content += str(self.body)
+        with open(file, 'a+') as h_file:  # a+: a means append at the end of the file and + means read/write/create
+            print(new_tag, file=h_file)
+
 
 
 if __name__ == '__main__':
@@ -158,6 +163,7 @@ if __name__ == '__main__':
     div1 = html.define_child('div', '', child=(a1,),  id='container')
     html.add_content('div', '', child=(div1,), Class="container-xl")
     html.display()
+    html.write_in_file()
     # tagWithContents = Tag('t1', 'this is a tag with content', id="123", Class="class_One")
     # tagWithContents.display()
 
