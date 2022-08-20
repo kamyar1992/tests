@@ -154,7 +154,7 @@ if __name__ == '__main__':
     doc = DocType(version=5)  # aggregation: the existence of the doc and other two objects do not dependent on html
     head = Head()             # objects
     body = Body()
-    html = Html(doc, head, body)  # the existence of html object are relied on 3 objects
+    html = Html(doc, head, body)  # the existence of html object rely on 3 objects
     # and 3 objects dependent on html object
     html.add_content('meta', '', single=True, section='head', charset="utf-8")
     html.add_content('meta', '', single=True, section='head', name="viewport", content="width=device-width, initial-scale=1")
