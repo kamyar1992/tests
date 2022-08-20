@@ -18,3 +18,6 @@ print(c)
 
 # delegation
 
+# composition: A(an object) <------> X, Y, Z (objects)
+# aggregation: 
+

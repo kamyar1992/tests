@@ -106,7 +106,7 @@ class Body(Tag):
 
 class Html(object):
     def __init__(self, version=5):
-        self.doc = DocType(version=version)
+        self.doc = DocType(version=version)  # composition: html object consists 3 objects
         self.head = Head()
         self.body = Body()
 
@@ -152,8 +152,8 @@ if __name__ == '__main__':
     # doc2 = DocType(2)  if uncomment this part of code it does not work after this line
     # doc2.display()
 
-    html = Html(version=5)
-
+    html = Html(version=5)  # composition: 3 instances are created with html object. html object dependent on 3 objects
+    # and 3 objects dependent on html object
     html.add_content('meta', '', single=True, section='head', charset="utf-8")
     html.add_content('meta', '', single=True, section='head', name="viewport", content="width=device-width, initial-scale=1")
     html.add_content('meta', '', single=True, section='head', name="generator", content="Hugo 0.101.0")
