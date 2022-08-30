@@ -32,7 +32,7 @@ class Penguin(object):
         print('I can swim very fast!!!!')
 
 
-def bird(bird_object):
+def duck(bird_object):
     bird_object.swim()
     bird_object.walk()
     bird_object.quack()
@@ -41,8 +41,10 @@ def bird(bird_object):
 if __name__ == "__main__":
     duck = Duck()
     penguin = Penguin()
-
-    bird(duck)
-    bird(penguin)
+    # for python duck and penguin instances are the same python interpreter acts like duck() function and for it duck
+    # and penguin are the same
+    duck(duck)
+    print('=' * 40)
+    duck(penguin)
 
 
