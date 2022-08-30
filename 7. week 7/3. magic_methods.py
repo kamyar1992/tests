@@ -33,7 +33,7 @@ class Foo(object):  # foo the name that use for examples
 if __name__ == "__main__":
     f = Foo()
     print(f)  # this is used __str__() method
-    print(f())
+    print(f())  # this uses __call__() method
     f.set_a(3)
     print(f)
     print('=' * 50)
