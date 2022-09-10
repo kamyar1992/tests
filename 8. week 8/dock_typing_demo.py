@@ -43,6 +43,7 @@ if __name__ == "__main__":
     penguin = Penguin()
     # for python duck and penguin instances are the same python interpreter acts like duck() function and for it duck
     # and penguin are the same
+    # search about duck type video just explain the concept pf it!!!
     duck(duck)
     print('=' * 40)
     duck(penguin)

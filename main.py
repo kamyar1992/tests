@@ -15,22 +15,5 @@ if __name__ == '__main__':
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
-# rc = 0
-# counter = 0
-# lst1 = []
-# while rc - 81:
-#     row = rc // 9
-#     col = rc % 9
-#
-#     si = col // 3 if row < 3 else 3 + col // 3 if row < 6 else 6 + col // 3 if row < 9 else None
-#     lst1.append(si)
-#     rc += 1
-# new_list = []
-# print(len(lst1))
-# for i in lst1:
-#     print(i, end='')
-
-grid = np.zeros((3, 3), dtype=int)
-print(grid.tolist()[0][0])
-
+import this
 

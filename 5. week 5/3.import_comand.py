@@ -22,3 +22,6 @@ print(dir(myPackage.subpackage1.__init__))
 
 import PIL
 print(dir(PIL.__init__))
+print(dir(PIL))
+help(PIL)
+

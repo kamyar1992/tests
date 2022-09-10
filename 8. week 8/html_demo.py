@@ -9,6 +9,11 @@ class Tag(object):
         self.start_tag = '<{}>\n'.format(n)
         self.end_tag = '</{}>\n'.format(n)
         self.content = c
+        self._temp1 = 0
+        self._sample1 = ''
+        self._sample2 = ''
+        # python mangling rule
+        self.__temp2 = 0
         # self.attributes = list()
         self.att = ''
         if attributes:  # here attributes are handled if a tag has one or more actually the string of attributes are
@@ -44,7 +49,16 @@ class DocType(Tag):
             sys.exit(-1)
         super().__init__(n=name, c='')
         self.end_tag = ''
+    # setter and getter: there are two ways for implementing this methods
+    # way1:
 
+    def sample1_setter(self, val):
+        self._sample1 = val
+
+    def sample2_getter(self):
+        return self._sample1
+
+    sample1Variable = property(sample2_getter, sample1_setter)  # methods should be added respectively without ()
 
 class Head(Tag):
     def __init__(self):

@@ -21,10 +21,10 @@ userChoice = input("Rock (r), Scisor (s) or Paper (p) ? ")
 
 computer_score = 0
 user_score = 0
-if x ==
-for x in range(int(gameIteration)):
-    print(x)
-    print(userChoice.lower())
+if x == '':
+    for x in range(int(gameIteration)):
+        print(x)
+        print(userChoice.lower())
     if userChoice.lower() == "q" or userChoice.lower() == "quit":
         print(userChoice)
         break
