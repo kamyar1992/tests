@@ -2,7 +2,7 @@ import sqlite3
 import datetime
 
 db = sqlite3.connect('employee')
-
+cursor = db.cursor()
 create_query = 'CREATE TABLE IF NOT EXISTS people(' \
                'id INTEGER PRIMARY KEY,' \
                'name TEXT NOT NULL,' \
@@ -43,7 +43,21 @@ today = datetime.date.today()
 # db.execute('INSERT INTO salary'
 #            f' VALUES(1003, 17000, {str(today)})')
 
-db.execute('UPDATE salary SET amount=2500000 WHERE id=1002')
+# db.execute('UPDATE salary SET amount=2500000 WHERE id=1002')
+
+
+# *important : .executescript() may cause SQL injection that leads to serious problems for example if the user enter:
+# ;drop table salary
+# because .executescript() execute more than one query!!!!!
+# salary_id = input('please enter your id: ')
+# cursor.executescript(f'UPDATE salary SET amount=100000000 WHERE id = {salary_id}')
+
+# replacement field:
+# when your program get data from user instead of using string formatting (.format()) use replacement field:
+# replacement field is used in query with ? for SQLite:
+salary_id = input('please enter user id: ')
+amount_salary = 100000000
+db.execute('UPDATE salary SET amount=? WHERE id=?', (amount_salary, salary_id))
 db.commit()
 db.close()
 

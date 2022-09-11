@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -39,6 +39,7 @@
     <connection id="3bf4ab5e-05d7-4ce1-aee7-c7fa7b66fd80" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="3bf4ab5e-05d7-4ce1-aee7-c7fa7b66fd80" dataset="main.salary" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="3bf4ab5e-05d7-4ce1-aee7-c7fa7b66fd80" dataset="main.people" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
