@@ -46,6 +46,7 @@
     <filter-actions connection-id="3bf4ab5e-05d7-4ce1-aee7-c7fa7b66fd80" dataset="main.salary" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="3bf4ab5e-05d7-4ce1-aee7-c7fa7b66fd80" dataset="main.people" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9ff714e9-015a-4948-9470-ea833881d3a6" dataset="main.albums" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="9ff714e9-015a-4948-9470-ea833881d3a6" dataset="main.artists" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
