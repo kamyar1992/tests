@@ -15,7 +15,6 @@ def create_db(cur, db_name):
 
 DB_NAME = 'db2'
 
-
 TABLES = dict()
 TABLES['employees'] = (
     "CREATE TABLE employees ("
@@ -29,6 +28,24 @@ TABLES['employees'] = (
     " ) ENGINE=InnoDB"
 )
 
+TABLES['salaries'] = (
+    "CREATE TABLE salaries("
+    "emp_no INT(11) NOT NULL,"
+    "salary INT(11) NOT NULL,"
+    "from_date DATE NOT NULL,"
+    "to_date DATE NOT NULL,"
+    "PRIMARY KEY (emp_no, from_date), KEY emp_no (emp_no),"
+    "CONSTRAINT salaries_ibfk_1 FOREIGN KEY (emp_no) "
+    "   REFERENCES employees (emp_no) ON DELETE CASCADE"
+    ") ENGINE = InnoDB"
+)
+
+TABLES['dept_manager'] = ("CREATE TABLE dept_manager ( "
+                          " dept_no VARCHAR(4) NOT NULL,"
+                          " emp_no INT(11) NOT NULL,"
+                          " from_date date NOT NULL,"
+                          " to_date DATE NOT NULL"
+                          ") ENGINE=InnoDB;")
 
 config = {"user": 'kamyar',
           'password': 'Kmz19921371@',
@@ -46,7 +63,7 @@ except mysql.connector.Error as err:
 try:
     cursor.execute('USE {}'.format(DB_NAME))
 except mysql.connector.Error as error_1:
-    if error_1.errno == errorcode.ER_BAD_DB_ERROR:   # *important pppppaaaaayyyyyyy attention to erno!!!!!!!!!!
+    if error_1.errno == errorcode.ER_BAD_DB_ERROR:  # *important pppppaaaaayyyyyyy attention to erno!!!!!!!!!!
         create_db(cursor, DB_NAME)
         print('Create database {}'.format(DB_NAME))
     else:
@@ -70,41 +87,3 @@ for item in TABLES:
         print(f'table {item} successfully created')
 
 # cursor.execute("CREATE TABLE employee()")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
