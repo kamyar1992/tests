@@ -53,9 +53,9 @@ salary_query = "INSERT INTO salaries(emp_no, salary, from_date, to_date)" \
                "VALUES(%s, %s, %s, %s)"  # %s means string
 tomorrow = datetime.datetime.now().date() + datetime.timedelta(days=1)   # datetime.datetime.now().date(): just return
 # data, not hours and minutes
-employee_data = (datetime.date(1992, 5, 30),
-                 'kamyar',
-                 'mazaher fard',
+employee_data = (datetime.date(1992, 1, 20),
+                 'dana',
+                 'rahnama',
                  'M',
                  tomorrow
                  )
@@ -64,7 +64,7 @@ cursor.execute(employee_query, employee_data)
 emp_no = cursor.lastrowid
 
 salary_data = (emp_no,
-               25_000_000,
+               55_000_000,
                tomorrow,
                datetime.date(2022, 12, 30))
 
